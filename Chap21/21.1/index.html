@@ -5764,11 +5764,11 @@ initial &amp; \{a\}       &amp; \{b\}                   &amp; \{c\} &amp; \{d\} 
 (b, g)  &amp; \{a\}       &amp; \{b, d, i, g\}          &amp; \{c\} &amp;               &amp; \{e\} &amp; \{f, k\} &amp;         &amp; \{h\} &amp;         &amp; \{j\} &amp;         \\
 (a, h)  &amp; \{a, h\}    &amp; \{b, d, i, g\}          &amp; \{c\} &amp;               &amp; \{e\} &amp; \{f, k\} &amp;         &amp;         &amp;         &amp; \{j\} &amp;         \\
 (i, j)  &amp; \{a, h\}    &amp; \{b, d, i, g, j\}       &amp; \{c\} &amp;               &amp; \{e\} &amp; \{f, k\} &amp;         &amp;         &amp;         &amp;         &amp;         \\
-(d, k)  &amp; \{a, h\}    &amp; \{b, g, i, g, j, f, k\} &amp; \{c\} &amp;               &amp; \{e\} &amp;            &amp;         &amp;         &amp;         &amp;         &amp;         \\
-(b, j)  &amp; \{a, h\}    &amp; \{b, g, i, g, j, f, k\} &amp; \{c\} &amp;               &amp; \{e\} &amp;            &amp;         &amp;         &amp;         &amp;         &amp;         \\
-(d, f)  &amp; \{a, h\}    &amp; \{b, g, i, g, j, f, k\} &amp; \{c\} &amp;               &amp; \{e\} &amp;            &amp;         &amp;         &amp;         &amp;         &amp;         \\
-(g, j)  &amp; \{a, h\}    &amp; \{b, g, i, g, j, f, k\} &amp; \{c\} &amp;               &amp; \{e\} &amp;            &amp;         &amp;         &amp;         &amp;         &amp;         \\
-(a, e)  &amp; \{a, e, h\} &amp; \{b, g, i, g, j, f, k\} &amp; \{c\} &amp;               &amp; \{e\} &amp;            &amp;         &amp;         &amp;         &amp;         &amp;     <br />
+(d, k)  &amp; \{a, h\}    &amp; \{b, d, i, g, j, f, k\} &amp; \{c\} &amp;               &amp; \{e\} &amp;            &amp;         &amp;         &amp;         &amp;         &amp;         \\
+(b, j)  &amp; \{a, h\}    &amp; \{b, d, i, g, j, f, k\} &amp; \{c\} &amp;               &amp; \{e\} &amp;            &amp;         &amp;         &amp;         &amp;         &amp;         \\
+(d, f)  &amp; \{a, h\}    &amp; \{b, d, i, g, j, f, k\} &amp; \{c\} &amp;               &amp; \{e\} &amp;            &amp;         &amp;         &amp;         &amp;         &amp;         \\
+(g, j)  &amp; \{a, h\}    &amp; \{b, d, i, g, j, f, k\} &amp; \{c\} &amp;               &amp; \{e\} &amp;            &amp;         &amp;         &amp;         &amp;         &amp;         \\
+(a, e)  &amp; \{a, h, e\} &amp; \{b, d, i, g, j, f, k\} &amp; \{c\} &amp;               &amp;         &amp;            &amp;         &amp;         &amp;         &amp;         &amp;     <br />
 \end{array}</p>
 <p>So, the connected components that we are left with are  $\{a, h, e\}$,  $\{b, d, i, g, j, f, k\}$, and $\{c\}$.</p>
 <h2 id="211-2">21.1-2</h2>
@@ -5780,7 +5780,7 @@ initial &amp; \{a\}       &amp; \{b\}                   &amp; \{c\} &amp; \{d\} 
 <blockquote>
 <p>During the execution of $\text{CONNECTED-COMPONENTS}$ on an undirected graph $G = (V, E)$ with $k$ connected components, how many times is $\text{FIND-SET}$ called? How many times is $\text{UNION}$ called? Express your answers in terms of $|V|$, $|E|$, and $k$.</p>
 </blockquote>
-<p>Find set is called twice on line 4, this is run once per edge in the graph, so, we have that find set is run $2|E|$ times. Since we start with $|V|$ sets, at the end only have $k$, and each call to $\text{UNION}$ reduces the number of sets by one, we have that we have to of made $|V| - k$ calls to $\text{UNION}$.</p>
+<p>Find set is called twice on line 4, this is run once per edge in the graph, so, we have that find set is run $2|E|$ times. Since we start with $|V|$ sets, at the end only have $k$, and each call to $\text{UNION}$ reduces the number of sets by one, we have that we have to made $|V| - k$ calls to $\text{UNION}$.</p>
                 
                   
                 
