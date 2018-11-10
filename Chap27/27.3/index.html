@@ -5870,6 +5870,42 @@ of size $\lceil \frac{n}{c} \rceil$ of entries before the last element, give one
 <blockquote>
 <p>Give a multithreaded version of $\text{RECURSIVE-FFT}$ on page 911. Make your implementation as parallel as possible. Analyze your algorithm.</p>
 </blockquote>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">P</span><span class="o">-</span><span class="n">RECURSIVE</span><span class="o">-</span><span class="n">FFT</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="n">length</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">a</span>
+    <span class="n">w_n</span> <span class="o">=</span> <span class="n">e</span><span class="o">^</span><span class="p">{</span><span class="mi">2</span> <span class="o">*</span> <span class="n">PI</span> <span class="o">*</span> <span class="n">i</span> <span class="o">/</span> <span class="n">n</span><span class="p">}</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">a_0</span><span class="p">,</span> <span class="n">a_2</span><span class="p">..</span><span class="n">a_</span><span class="p">{</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">}]</span>
+    <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">a_1</span><span class="p">,</span> <span class="n">a_3</span><span class="p">..</span><span class="n">a_</span><span class="p">{</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">}]</span>
+    <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">spawn</span> <span class="n">P</span><span class="o">-</span><span class="n">RECURSIVE</span><span class="o">-</span><span class="n">FFT</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">P</span><span class="o">-</span><span class="n">RECURSIVE</span><span class="o">-</span><span class="n">FFT</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">sync</span>
+    <span class="n">parallel</span> <span class="k">for</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span> <span class="n">to</span> <span class="n">n</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">y_k</span> <span class="o">=</span> <span class="n">y_k</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span> <span class="o">*</span> <span class="n">y_k</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">y_</span><span class="p">{</span><span class="n">k</span> <span class="o">+</span> <span class="n">n</span> <span class="o">/</span> <span class="mi">2</span><span class="p">}</span> <span class="o">=</span> <span class="n">y_k</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">w</span> <span class="o">*</span> <span class="n">y_k</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="n">w</span> <span class="o">*</span> <span class="n">w_n</span>
+    <span class="k">return</span> <span class="n">y</span>
+</pre></div>
+</td></tr></table>
+
+<p>$\text{P-RECURSIVE-FFT}$ parallelized over the two recursive
+calls, having a parallel for works because each of the iterations of the <strong>for</strong> loop touch independent sets of variables. The span of the procedure is only $\Theta(\lg n)$ giving it a parallelization of $\Theta(n)$.</p>
 <h2 id="273-5-star">27.3-5 $\star$</h2>
 <blockquote>
 <p>Give a multithreaded version of $\text{RANDOMIZED-SELECT}$ on page 216. Make your implementation as parallel as possible. Analyze your algorithm. ($\textit{Hint:}$ Use the partitioning algorithm from Exercise 27.3-3.)</p>

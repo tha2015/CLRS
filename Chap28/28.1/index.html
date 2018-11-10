@@ -5894,6 +5894,99 @@ x_3
 $$</p>
 <p>by using forward substitution.</p>
 </blockquote>
+<p>We have</p>
+<p>\begin{align}
+A &amp; =
+\begin{pmatrix}
+1 &amp; 5 &amp; 4 \\
+2 &amp; 0 &amp; 3 \\
+5 &amp; 8 &amp; 2
+\end{pmatrix}, \\
+b &amp; =
+\begin{pmatrix}
+12 \\
+ 9 \\
+ 5
+\end{pmatrix},
+\end{align}</p>
+<p>and we with to solve for the unknown $x$. The $\text{LUP}$ decomposition is</p>
+<p>\begin{align}
+L &amp; =
+\begin{pmatrix}
+1   &amp;                0 &amp; 0 \\  <br />
+0.2 &amp;                1 &amp; 0 \\
+0.4 &amp; -\frac{3.2}{3.4} &amp; 1
+\end{pmatrix}, \\
+U &amp; =
+\begin{pmatrix}
+5 &amp; 8   &amp; 2 \\
+0 &amp; 3.4 &amp; 3.6 \\
+0 &amp; 0   &amp; 2.2 + \frac{11.52}{3.4}
+\end{pmatrix}, \\
+P &amp; =
+\begin{pmatrix}
+0 &amp; 0 &amp; 1 \\
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0
+\end{pmatrix}.
+\end{align}</p>
+<p>Using forward substitution, we solve $Ly = Pb$ for $y$:</p>
+<p>$$
+\begin{pmatrix}
+1   &amp;                0 &amp; 0 \\  <br />
+0.2 &amp;                1 &amp; 0 \\
+0.4 &amp; -\frac{3.2}{3.4} &amp; 1
+\end{pmatrix}
+\begin{pmatrix}
+y_1 \\
+y_2 \\
+y_3
+\end{pmatrix}
+=
+\begin{pmatrix}
+ 5 \\
+12 \\
+ 9
+\end{pmatrix},
+$$</p>
+<p>obtaining</p>
+<p>$$
+y =
+\begin{pmatrix}
+ 5 \\
+11 \\
+7 + \frac{35.2}{3.4}
+\end{pmatrix}
+$$</p>
+<p>by computing first $y_1$, then $y_2$, and finally $y_3$. Using back substitution, we solve $Ux = y$ for $x$:</p>
+<p>$$
+\begin{pmatrix}
+5 &amp; 8   &amp; 2 \\
+0 &amp; 3.4 &amp; 3.6 \\
+0 &amp; 0   &amp; 2.2 + \frac{11.52}{3.4}
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\
+x_2 \\
+x_3
+\end{pmatrix}
+=
+\begin{pmatrix}
+ 5 \\
+11 \\
+7 + \frac{35.2}{3.4}
+\end{pmatrix},
+$$</p>
+<p>thereby obtaining the desired answer</p>
+<p>$$
+x =
+\begin{pmatrix}
+-\frac{3}{19} \\
+-\frac{1}{19} \\
+\frac{49}{19}
+\end{pmatrix}
+$$</p>
+<p>by computing first $x_3$, then $x_2$, and finally $x_1$.</p>
 <h2 id="281-4">28.1-4</h2>
 <blockquote>
 <p>Describe the $\text{LUP}$ decomposition of a diagonal matrix.</p>

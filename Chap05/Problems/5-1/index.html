@@ -5701,11 +5701,9 @@
              &amp; = \sum_{i = 0}^{2^b - 1} \text E[X_j \mid C_j = i] \cdot \Pr\{C_j = i\}.
 \end{align}</p>
 <p>To compute $\text E[X_j \mid C_j = i]$, we note that</p>
-<ul>
-<li>$$\Pr\{X_j = 0 \mid C_j = i\} = 1 - 1 / (n_{i + 1} - n_i),$$</li>
-<li>$$\Pr\{X_j = n_{i + 1} - n_i \mid C_j = i\} = 1 / (n_{i + 1} - n_i),$$ and</li>
-<li>$$\Pr\{X_j = k \mid C_j = i\} = 0$$ for all other $k$.</li>
-</ul>
+<p>$$\Pr\{X_j = 0 \mid C_j = i\} = 1 - 1 / (n_{i + 1} - n_i),$$
+$$\Pr\{X_j = n_{i + 1} - n_i \mid C_j = i\} = 1 / (n_{i + 1} - n_i),$$ and
+$$\Pr\{X_j = k \mid C_j = i\} = 0$$ for all other $k$.</p>
 <p>Thus,</p>
 <p>\begin{align}
 \text E[X_j \mid C_j = i] &amp; = \sum_k k \cdot \Pr\{X_j = k \mid C_j = i\} \\
