@@ -6027,10 +6027,10 @@ v &amp; 4 &amp; 5
   <span class="n">time</span> <span class="o">=</span> <span class="n">time</span> <span class="o">+</span> <span class="mi">1</span>
   <span class="n">u</span><span class="p">.</span><span class="n">d</span> <span class="o">=</span> <span class="n">time</span>
   <span class="n">u</span><span class="p">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">GRAY</span>
-  <span class="k">for</span> <span class="n">each</span> <span class="n">v</span> <span class="n">in</span> <span class="n">G</span><span class="p">.</span><span class="n">Adj</span><span class="p">[</span><span class="n">u</span><span class="p">]</span>
+  <span class="k">for</span> <span class="n">each</span> <span class="n">v</span> <span class="err">∈</span> <span class="n">G</span><span class="p">.</span><span class="n">Adj</span><span class="p">[</span><span class="n">u</span><span class="p">]</span>
       <span class="k">if</span> <span class="n">v</span><span class="p">.</span><span class="n">color</span> <span class="o">==</span> <span class="n">white</span>
-          <span class="n">print</span> <span class="s">&quot;(u,v) is a Tree edge.&quot;</span>
-          <span class="n">v</span><span class="p">.</span><span class="n">PI</span> <span class="o">=</span> <span class="n">u</span>
+          <span class="n">print</span> <span class="s">&quot;(u, v) is a Tree edge.&quot;</span>
+          <span class="n">v</span><span class="p">.</span><span class="err">π</span> <span class="o">=</span> <span class="n">u</span>
           <span class="n">DFS</span><span class="o">-</span><span class="n">VISIT</span><span class="o">-</span><span class="n">PRINT</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
       <span class="k">else</span> <span class="k">if</span> <span class="n">v</span><span class="p">.</span><span class="n">color</span> <span class="o">==</span> <span class="n">gray</span>
           <span class="n">print</span> <span class="s">&quot;(u, v) is a Back edge.&quot;</span>
@@ -6072,7 +6072,7 @@ v &amp; 5 &amp; 6
 10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">DFS</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">each</span> <span class="n">vertex</span> <span class="n">u</span> <span class="err">∈</span> <span class="n">G</span><span class="p">.</span><span class="n">V</span>
         <span class="n">u</span><span class="p">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">WHITE</span>
-        <span class="n">u</span><span class="p">.</span><span class="n">PI</span> <span class="o">=</span> <span class="n">NIL</span>
+        <span class="n">u</span><span class="p">.</span><span class="err">π</span> <span class="o">=</span> <span class="n">NIL</span>
     <span class="n">time</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">each</span> <span class="n">vertex</span> <span class="n">u</span> <span class="err">∈</span> <span class="n">G</span><span class="p">.</span><span class="n">V</span>
@@ -6100,7 +6100,7 @@ v &amp; 5 &amp; 6
     <span class="n">u</span><span class="p">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">GRAY</span>
     <span class="k">for</span> <span class="n">each</span> <span class="n">v</span> <span class="err">∈</span> <span class="n">G</span><span class="p">.</span><span class="n">Adj</span><span class="p">[</span><span class="n">u</span><span class="p">]</span>
         <span class="k">if</span> <span class="n">v</span><span class="p">.</span><span class="n">color</span> <span class="o">==</span> <span class="n">WHITE</span>
-            <span class="n">v</span><span class="p">.</span><span class="n">PI</span> <span class="o">=</span> <span class="n">u</span>
+            <span class="n">v</span><span class="p">.</span><span class="err">π</span> <span class="o">=</span> <span class="n">u</span>
             <span class="n">DFS</span><span class="o">-</span><span class="n">VISIT</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">counter</span><span class="p">)</span>
     <span class="n">u</span><span class="p">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">BLACK</span>
     <span class="n">time</span> <span class="o">=</span> <span class="n">time</span> <span class="o">+</span> <span class="mi">1</span>

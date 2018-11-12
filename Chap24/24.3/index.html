@@ -5961,9 +5961,9 @@ z &amp; s &amp; z &amp; s &amp; \text{NIL}
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">RELAX</span><span class="o">-</span><span class="n">RELIABILITY</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">v</span><span class="p">.</span><span class="n">d</span> <span class="o">&lt;</span> <span class="n">u</span><span class="p">.</span><span class="n">d</span><span class="err">．</span><span class="n">r</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
-        <span class="n">v</span><span class="p">.</span><span class="n">d</span> <span class="o">=</span> <span class="n">u</span><span class="p">.</span><span class="n">d</span><span class="err">．</span><span class="n">r</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
-        <span class="n">v</span><span class="p">.</span><span class="n">PI</span> <span class="o">=</span> <span class="n">u</span>
+    <span class="k">if</span> <span class="n">v</span><span class="p">.</span><span class="n">d</span> <span class="o">&lt;</span> <span class="n">u</span><span class="p">.</span><span class="n">d</span> <span class="o">*</span> <span class="n">r</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+        <span class="n">v</span><span class="p">.</span><span class="n">d</span> <span class="o">=</span> <span class="n">u</span><span class="p">.</span><span class="n">d</span> <span class="o">*</span> <span class="n">r</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+        <span class="n">v</span><span class="p">.</span><span class="err">π</span> <span class="o">=</span> <span class="n">u</span>
 </pre></div>
 </td></tr></table>
 

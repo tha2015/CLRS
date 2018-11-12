@@ -5805,17 +5805,17 @@ v_4.N &amp; = \langle v_2, v_3, t \rangle.
 7
 8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PUSH</span><span class="o">-</span><span class="n">RELABEL</span><span class="o">-</span><span class="n">QUEUE</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
     <span class="n">INITIALIZE</span><span class="o">-</span><span class="n">PREFLOW</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
-    <span class="n">Initialize</span> <span class="n">an</span> <span class="n">empty</span> <span class="n">queue</span> <span class="n">q</span>
+    <span class="n">let</span> <span class="n">q</span> <span class="n">be</span> <span class="n">a</span> <span class="k">new</span> <span class="n">empty</span> <span class="n">queue</span>
     <span class="k">for</span> <span class="n">v</span> <span class="err">∈</span> <span class="n">G</span><span class="p">.</span><span class="n">Adj</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
-        <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+        <span class="n">PUSH</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
     <span class="k">while</span> <span class="n">q</span><span class="p">.</span><span class="n">head</span> <span class="o">!=</span> <span class="n">NIL</span>
         <span class="n">DISCHARGE</span><span class="p">(</span><span class="n">q</span><span class="p">.</span><span class="n">head</span><span class="p">)</span>
-        <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="n">POP</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
 
 <p>Note that we need to modify the $\text{DISCHARGE}$ algorithm to push vertices $v$ onto the queue if $v$ was not overflowing before a discharge but is overflowing after one.</p>
-<p>Between lines 7 and 8 of $\text{DISCHARGE}(u)$, add the line ''if $v.e &gt; 0$, $q.push(v)$.'' This is an implementation of the generic push-relabel algorithm, so we know it is correct. The analysis of runtime is almost identical to that of Theorem 26.30. We just need to verify that there are at most $|V|$ calls to $\text{DISCHARGE}$ between two consecutive relabel operations. Observe that after calling $\text{PUSH}(u, v)$, Corollary 26.28 tells us that no admissible edges are entering $v$. Thus, once $v$ is put into the queue because of the push, it can't be added again until it has been relabeled. Thus, at most $|V|$ vertices are added to the queue between relabel operations.</p>
+<p>Between lines 7 and 8 of $\text{DISCHARGE}(u)$, add the line ''if $v.e &gt; 0$, $\text{PUSH}(q, v)$.'' This is an implementation of the generic push-relabel algorithm, so we know it is correct. The analysis of runtime is almost identical to that of Theorem 26.30. We just need to verify that there are at most $|V|$ calls to $\text{DISCHARGE}$ between two consecutive relabel operations. Observe that after calling $\text{PUSH}(u, v)$, Corollary 26.28 tells us that no admissible edges are entering $v$. Thus, once $v$ is put into the queue because of the push, it can't be added again until it has been relabeled. Thus, at most $|V|$ vertices are added to the queue between relabel operations.</p>
 <h2 id="265-3">26.5-3</h2>
 <blockquote>
 <p>Show that the generic algorithm still works if $\text{RELABEL}$ updates $u.h$ by simply computing $u.h = u.h + 1$. How would this change affect the analysis of $\text{RELABEL-TO-FRONT}$?</p>

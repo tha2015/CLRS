@@ -5999,7 +5999,7 @@ $$</p>
 <blockquote>
 <p>Suppose we also wish to compute the vertices on shortest paths in the algorithms of this section. Show how to compute the predecessor matrix $\prod$ from the completed matrix $L$ of shortest-path weights in $O(n^3)$ time.</p>
 </blockquote>
-<p>For each source vertex $v_i$ we need to compute the shortest-paths tree for $v_i$. To do this, we need to compute the predecessor for each $j \ne i$. For fixed $i$ and $j$, this is the value of $k$ such that $L_{i, k} + w(k, j) = L_{i, j}$. Since there are $n$ vertices whose trees need computing, $n$ vertices for each such tree whose predecessors need computing, and it takes $O(n)$ to compute this for each one (checking each possible $k$), the total time is $O(n^3)$.</p>
+<p>For each source vertex $v_i$ we need to compute the shortest-paths tree for $v_i$. To do this, we need to compute the predecessor for each $j \ne i$. For fixed $i$ and $j$, this is the value of $k$ such that $L_{i, k} + w(k, j) = L[i, j]$. Since there are $n$ vertices whose trees need computing, $n$ vertices for each such tree whose predecessors need computing, and it takes $O(n)$ to compute this for each one (checking each possible $k$), the total time is $O(n^3)$.</p>
 <h2 id="251-7">25.1-7</h2>
 <blockquote>
 <p>We can also compute the vertices on shortest paths as we compute the shortestpath weights. Define $\pi_{ij}^{(m)}$ as the predecessor of vertex $j$ on any minimum-weight path from $i$ to $j$ that contains at most $m$ edges. Modify the $\text{EXTEND-SHORTESTPATHS}$ and $\text{SLOW-ALL-PAIRS-SHORTEST-PATHS}$ procedures to compute the matrices$\prod^{(1)}, \prod^{(2)}, \ldots, \prod^{(n - 1)}$ as the matrices $L^{(1)}, L^{(2)}, \ldots, L^{(n - 1)}$ are computed.</p>
@@ -6019,17 +6019,17 @@ $$</p>
 12
 13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">EXTEND</span><span class="o">-</span><span class="n">SHORTEST</span><span class="o">-</span><span class="n">PATH</span><span class="o">-</span><span class="n">MOD</span><span class="p">(</span><span class="err">∏</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">W</span><span class="p">)</span>
     <span class="n">n</span> <span class="o">=</span> <span class="n">L</span><span class="p">.</span><span class="n">row</span>
-    <span class="n">Let</span> <span class="n">L</span><span class="err">&#39;</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span><span class="err">&#39;</span><span class="n">_</span><span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">})</span> <span class="n">be</span> <span class="n">a</span> <span class="k">new</span> <span class="n">n</span> <span class="err">×</span> <span class="n">n</span> <span class="n">matirx</span>
-    <span class="err">∏&#39;</span> <span class="o">=</span> <span class="p">(</span><span class="n">PI</span><span class="err">&#39;</span><span class="n">_</span><span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">})</span> <span class="n">is</span> <span class="n">a</span> <span class="k">new</span> <span class="n">n</span> <span class="err">×</span> <span class="n">n</span> <span class="n">matrix</span>
+    <span class="n">let</span> <span class="n">L</span><span class="err">&#39;</span> <span class="o">=</span> <span class="n">l</span><span class="err">&#39;</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="n">be</span> <span class="n">a</span> <span class="k">new</span> <span class="n">n</span> <span class="err">×</span> <span class="n">n</span> <span class="n">matirx</span>
+    <span class="err">∏&#39;</span> <span class="o">=</span> <span class="err">π&#39;</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="n">is</span> <span class="n">a</span> <span class="k">new</span> <span class="n">n</span> <span class="err">×</span> <span class="n">n</span> <span class="n">matrix</span>
     <span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="n">to</span> <span class="n">n</span>
         <span class="k">for</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span> <span class="n">to</span> <span class="n">n</span>
-            <span class="n">l</span><span class="err">&#39;</span><span class="n">_</span><span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">}</span> <span class="o">=</span> <span class="err">∞</span>
-            <span class="n">PI_</span><span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">}</span> <span class="o">=</span> <span class="n">NIL</span>
+            <span class="n">l</span><span class="err">&#39;</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="err">∞</span>
+            <span class="err">π</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">NIL</span>
             <span class="k">for</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span> <span class="n">to</span> <span class="n">n</span>
-                <span class="k">if</span> <span class="n">l_</span><span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">}</span> <span class="o">+</span> <span class="n">l_</span><span class="p">{</span><span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">}</span> <span class="o">&lt;</span> <span class="n">l_</span><span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">}</span>
-                    <span class="n">l_</span><span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">}</span> <span class="o">=</span> <span class="n">l_</span><span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">}</span> <span class="o">+</span> <span class="n">l_</span><span class="p">{</span><span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">}</span>
-                    <span class="n">PI</span><span class="err">&#39;</span><span class="n">_</span><span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">}</span> <span class="o">=</span> <span class="n">PI_</span><span class="p">{</span><span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">}</span>
-    <span class="k">return</span> <span class="err">∏&#39;</span><span class="p">,</span> <span class="n">L</span><span class="err">&#39;</span>
+                <span class="k">if</span> <span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">l</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+                    <span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">l</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span>
+                    <span class="err">π&#39;</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="err">π</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">(</span><span class="err">∏&#39;</span><span class="p">,</span> <span class="n">L</span><span class="err">&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
 
@@ -6041,11 +6041,11 @@ $$</p>
 6
 7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>SLOW-ALL-PAIRS-SHORTEST-PATHS-MOD(W)
     n = W.rows
-    L^{(1)} = W
-    ∏^{(1)} = (PI_{i, j}^{(1)}) where PI_{i, j}^{(1)} = i if there is an edge from i to j, and NIL otherwise.
+    L(1) = W
+    ∏(1) = π[i, j](1) where π[i, j](1) = i if there is an edge from i to j, and NIL otherwise
     for m = 2 to n - 1
-        ∏^{(m)}, L^{(m)} = EXTEND-SHORTEST-PATH-MOD(∏^{(m - 1)}, L^{(m - 1)}, W)
-    return ∏^{(n - 1)}, L^{(n - 1)}
+        ∏(m), L(m) = EXTEND-SHORTEST-PATH-MOD(∏(m - 1), L(m - 1), W)
+    return (∏(n - 1), L(n - 1))
 </pre></div>
 </td></tr></table>
 

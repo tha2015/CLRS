@@ -5681,7 +5681,7 @@
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">CACHE</span><span class="o">-</span><span class="n">MANAGER</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
     <span class="n">INITIALIZE</span><span class="o">-</span><span class="n">CACHE</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="n">to</span> <span class="n">n</span>
-        <span class="n">ACCESS</span><span class="p">(</span><span class="n">ri</span><span class="p">)</span>
+        <span class="n">ACCESS</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </pre></div>
 </td></tr></table>
 
@@ -5705,13 +5705,13 @@
     <span class="n">let</span> <span class="n">H</span> <span class="n">be</span> <span class="n">a</span> <span class="k">new</span> <span class="n">hash</span> <span class="n">table</span>
     <span class="n">ind</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="n">to</span> <span class="n">n</span>
-        <span class="n">j</span> <span class="o">=</span> <span class="n">HASH</span><span class="o">-</span><span class="n">SEARCH</span><span class="p">(</span><span class="n">ri</span><span class="p">)</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">HASH</span><span class="o">-</span><span class="n">SEARCH</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
         <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="n">NIL</span>
-            <span class="n">HASH</span><span class="o">-</span><span class="n">INSERT</span><span class="p">(</span><span class="n">ri</span><span class="p">,</span> <span class="n">ind</span><span class="p">)</span>
-            <span class="n">let</span> <span class="n">S_</span><span class="p">{</span><span class="n">ind</span><span class="p">}</span> <span class="n">be</span> <span class="n">a</span> <span class="k">new</span> <span class="n">linked</span> <span class="n">list</span>
+            <span class="n">HASH</span><span class="o">-</span><span class="n">INSERT</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">ind</span><span class="p">)</span>
+            <span class="n">let</span> <span class="n">S</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="n">be</span> <span class="n">a</span> <span class="k">new</span> <span class="n">linked</span> <span class="n">list</span>
             <span class="n">j</span> <span class="o">=</span> <span class="n">ind</span>
             <span class="n">ind</span> <span class="o">=</span> <span class="n">ind</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="n">append</span> <span class="n">i</span> <span class="n">to</span> <span class="n">Sj</span>
+        <span class="n">append</span> <span class="n">i</span> <span class="n">to</span> <span class="n">S</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
 </pre></div>
 </td></tr></table>
 
@@ -5755,38 +5755,38 @@
 30
 31
 32
-33</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ACCESS</span><span class="p">(</span><span class="n">ri</span><span class="p">)</span>
-    <span class="c1">// Compute the next access time for ri.</span>
-    <span class="n">ind</span> <span class="o">=</span> <span class="n">HASH</span><span class="o">-</span><span class="n">SEARCH</span><span class="p">(</span><span class="n">ri</span><span class="p">)</span>
+33</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ACCESS</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="c1">// Compute the next access time for r[i].</span>
+    <span class="n">ind</span> <span class="o">=</span> <span class="n">HASH</span><span class="o">-</span><span class="n">SEARCH</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
     <span class="n">time</span> <span class="o">=</span> <span class="err">∞</span>
-    <span class="k">delete</span> <span class="n">the</span> <span class="n">head</span> <span class="n">of</span> <span class="n">S_</span><span class="p">{</span><span class="n">ind</span><span class="p">}</span>
-    <span class="k">if</span> <span class="n">S_</span><span class="p">{</span><span class="n">ind</span><span class="p">}</span> <span class="n">is</span> <span class="n">not</span> <span class="n">empty</span>
-        <span class="n">time</span> <span class="o">=</span> <span class="n">head</span> <span class="n">of</span> <span class="n">S_</span><span class="p">{</span><span class="n">ind</span><span class="p">}</span>
-    <span class="c1">// Check to see whether ri is currently in the cache.</span>
-    <span class="k">if</span> <span class="n">TREE</span><span class="o">-</span><span class="n">SEARCH</span><span class="p">(</span><span class="n">T</span><span class="p">.</span><span class="n">root</span><span class="p">,</span> <span class="n">ri</span><span class="p">)</span> <span class="o">!=</span> <span class="n">NIL</span>
+    <span class="k">delete</span> <span class="n">the</span> <span class="n">head</span> <span class="n">of</span> <span class="n">S</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">S</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="n">is</span> <span class="n">not</span> <span class="n">empty</span>
+        <span class="n">time</span> <span class="o">=</span> <span class="n">head</span> <span class="n">of</span> <span class="n">S</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span>
+    <span class="c1">// Check to see whether r[i] is currently in the cache.</span>
+    <span class="k">if</span> <span class="n">TREE</span><span class="o">-</span><span class="n">SEARCH</span><span class="p">(</span><span class="n">T</span><span class="p">.</span><span class="n">root</span><span class="p">,</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">!=</span> <span class="n">NIL</span>
         <span class="n">print</span> <span class="s">&quot;cache hit&quot;</span>
     <span class="k">else</span> <span class="k">if</span> <span class="n">TREE</span><span class="o">-</span><span class="n">SIZE</span><span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">k</span>
         <span class="c1">// Insert in an empty slot in the cache.</span>
         <span class="n">let</span> <span class="n">z</span> <span class="n">be</span> <span class="n">a</span> <span class="k">new</span> <span class="n">node</span> <span class="k">for</span> <span class="n">T</span>
-        <span class="n">z</span><span class="p">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">ri</span>
+        <span class="n">z</span><span class="p">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
         <span class="n">RB</span><span class="o">-</span><span class="n">INSERT</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
         <span class="n">let</span> <span class="n">event</span> <span class="n">be</span> <span class="n">a</span> <span class="k">new</span> <span class="n">object</span> <span class="k">for</span> <span class="n">P</span>
         <span class="n">event</span><span class="p">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">time</span>
-        <span class="n">event</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">ri</span>
+        <span class="n">event</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
         <span class="n">INSERT</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">event</span><span class="p">)</span>
-        <span class="n">print</span> <span class="s">&quot;cache miss, inserted &quot;</span> <span class="n">ri</span> <span class="s">&quot;in empty slot&quot;</span>
+        <span class="n">print</span> <span class="s">&quot;cache miss, inserted&quot;</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="s">&quot;in empty slot&quot;</span>
     <span class="k">else</span> <span class="n">event</span> <span class="o">=</span> <span class="n">MAXIMUM</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">event</span><span class="p">.</span><span class="n">key</span> <span class="err">≤</span> <span class="n">time</span>     <span class="c1">// ri has the furthest access time</span>
+        <span class="k">if</span> <span class="n">event</span><span class="p">.</span><span class="n">key</span> <span class="err">≤</span> <span class="n">time</span>     <span class="c1">// r[i] has the furthest access time</span>
             <span class="n">print</span> <span class="s">&quot;cache miss, no data element evicted&quot;</span>
         <span class="k">else</span> <span class="c1">// evict the element with furthest access time</span>
-            <span class="n">print</span> <span class="s">&quot;cache miss, evict data element &quot;</span> <span class="n">event</span><span class="p">.</span><span class="n">value</span>
+            <span class="n">print</span> <span class="s">&quot;cache miss, evict data element&quot;</span> <span class="n">event</span><span class="p">.</span><span class="n">value</span>
             <span class="n">event</span> <span class="o">=</span> <span class="n">EXTRACT</span><span class="o">-</span><span class="n">MAX</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
             <span class="n">RB</span><span class="o">-</span><span class="n">DELETE</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">TREE</span><span class="o">-</span><span class="n">SEARCH</span><span class="p">(</span><span class="n">T</span><span class="p">.</span><span class="n">root</span><span class="p">,</span> <span class="n">event</span><span class="p">.</span><span class="n">value</span><span class="p">))</span>
             <span class="n">event</span><span class="p">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">time</span>
-            <span class="n">event</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">ri</span>
+            <span class="n">event</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
             <span class="n">INSERT</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">event</span><span class="p">)</span>
             <span class="n">let</span> <span class="n">z</span> <span class="n">be</span> <span class="n">a</span> <span class="k">new</span> <span class="n">node</span> <span class="k">for</span> <span class="n">T</span>
-            <span class="n">z</span><span class="p">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">ri</span>
+            <span class="n">z</span><span class="p">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
             <span class="n">RB</span><span class="o">-</span><span class="n">INSERT</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>

@@ -5851,8 +5851,8 @@
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">STACK</span><span class="o">-</span><span class="n">EMPTY</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">L</span><span class="p">.</span><span class="n">head</span> <span class="o">==</span> <span class="n">NIL</span>
-        <span class="k">return</span> <span class="n">TRUE</span>
-    <span class="k">else</span> <span class="k">return</span> <span class="n">FALSE</span>
+        <span class="k">return</span> <span class="nb">true</span>
+    <span class="k">else</span> <span class="k">return</span> <span class="nb">false</span>
 </pre></div>
 </td></tr></table>
 
@@ -5889,8 +5889,8 @@
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">QUEUE</span><span class="o">-</span><span class="n">EMPTY</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">L</span><span class="p">.</span><span class="n">head</span> <span class="o">==</span> <span class="n">NIL</span>
-        <span class="k">return</span> <span class="n">TRUE</span>
-    <span class="k">else</span> <span class="k">return</span> <span class="n">FALSE</span>
+        <span class="k">return</span> <span class="nb">true</span>
+    <span class="k">else</span> <span class="k">return</span> <span class="nb">false</span>
 </pre></div>
 </td></tr></table>
 
@@ -6018,11 +6018,11 @@
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">LIST</span><span class="o">-</span><span class="n">UNION</span><span class="p">(</span><span class="n">L1</span><span class="p">,</span> <span class="n">L2</span><span class="p">)</span>
-    <span class="n">L2</span><span class="p">.</span><span class="n">nil</span><span class="p">.</span><span class="n">next</span><span class="p">.</span><span class="n">prev</span> <span class="o">=</span> <span class="n">L1</span><span class="p">.</span><span class="n">nil</span><span class="p">.</span><span class="n">prev</span>
-    <span class="n">L1</span><span class="p">.</span><span class="n">nil</span><span class="p">.</span><span class="n">prev</span><span class="p">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">L2</span><span class="p">.</span><span class="n">nil</span><span class="p">.</span><span class="n">next</span>
-    <span class="n">L2</span><span class="p">.</span><span class="n">nil</span><span class="p">.</span><span class="n">prev</span><span class="p">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">L1</span><span class="p">.</span><span class="n">nil</span>
-    <span class="n">L1</span><span class="p">.</span><span class="n">nil</span><span class="p">.</span><span class="n">prev</span> <span class="o">=</span> <span class="n">L2</span><span class="p">.</span><span class="n">nil</span><span class="p">.</span><span class="n">prev</span>
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">LIST</span><span class="o">-</span><span class="n">UNION</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">L</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">L</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">nil</span><span class="p">.</span><span class="n">next</span><span class="p">.</span><span class="n">prev</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">nil</span><span class="p">.</span><span class="n">prev</span>
+    <span class="n">L</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">nil</span><span class="p">.</span><span class="n">prev</span><span class="p">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">nil</span><span class="p">.</span><span class="n">next</span>
+    <span class="n">L</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">nil</span><span class="p">.</span><span class="n">prev</span><span class="p">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">nil</span>
+    <span class="n">L</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">nil</span><span class="p">.</span><span class="n">prev</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">nil</span><span class="p">.</span><span class="n">prev</span>
 </pre></div>
 </td></tr></table>
 
@@ -6051,16 +6051,16 @@
     <span class="k">else</span> <span class="k">if</span> <span class="n">L</span><span class="p">.</span><span class="n">head</span><span class="p">.</span><span class="n">next</span> <span class="o">==</span> <span class="n">NIL</span>
         <span class="k">return</span>
     <span class="k">else</span>
-        <span class="n">p1</span> <span class="o">=</span> <span class="n">L</span><span class="p">.</span><span class="n">head</span><span class="p">.</span><span class="n">next</span>
+        <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="p">.</span><span class="n">head</span><span class="p">.</span><span class="n">next</span>
         <span class="n">L</span><span class="p">.</span><span class="n">head</span><span class="p">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">NIL</span>
-        <span class="n">p2</span> <span class="o">=</span> <span class="n">p1</span><span class="p">.</span><span class="n">next</span>
-        <span class="n">p1</span> <span class="o">=</span> <span class="n">next</span> <span class="o">=</span> <span class="n">L</span><span class="p">.</span><span class="n">head</span>
-        <span class="k">while</span> <span class="n">p2</span> <span class="o">!=</span> <span class="n">NIL</span>
-            <span class="n">p3</span> <span class="o">=</span> <span class="n">p2</span><span class="p">.</span><span class="n">next</span>
-            <span class="n">p2</span><span class="p">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">p1</span>
-            <span class="n">p1</span> <span class="o">=</span> <span class="n">p2</span>
-            <span class="n">p2</span> <span class="o">=</span> <span class="n">p3</span>
-        <span class="n">L</span><span class="p">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">p1</span>
+        <span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">next</span>
+        <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">next</span> <span class="o">=</span> <span class="n">L</span><span class="p">.</span><span class="n">head</span>
+        <span class="k">while</span> <span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">!=</span> <span class="n">NIL</span>
+            <span class="n">p</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">next</span>
+            <span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="n">next</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+            <span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">L</span><span class="p">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </td></tr></table>
 
