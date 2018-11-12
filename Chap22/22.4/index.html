@@ -5889,12 +5889,12 @@ p &amp; 27 &amp; 28
         <span class="k">for</span> <span class="n">each</span> <span class="n">v</span> <span class="err">∈</span> <span class="n">G</span><span class="p">.</span><span class="n">Adj</span><span class="p">[</span><span class="n">u</span><span class="p">]</span>
             <span class="n">v</span><span class="p">.</span><span class="n">in</span><span class="o">-</span><span class="n">degree</span> <span class="o">=</span> <span class="n">v</span><span class="p">.</span><span class="n">in</span><span class="o">-</span><span class="n">degree</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="c1">// Initialize Queue, Θ(V) time.</span>
-    <span class="n">Q</span> <span class="o">=</span> <span class="err">∅</span>
+    <span class="n">Q</span> <span class="o">=</span> <span class="err">Ø</span>
     <span class="k">for</span> <span class="n">each</span> <span class="n">vertex</span> <span class="n">u</span> <span class="err">∈</span> <span class="n">G</span><span class="p">.</span><span class="n">V</span>
         <span class="k">if</span> <span class="n">u</span><span class="p">.</span><span class="n">in</span><span class="o">-</span><span class="n">degree</span> <span class="o">==</span> <span class="mi">0</span>
             <span class="n">ENQUEUE</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span>
     <span class="c1">// while loop takes O(V + E) time.</span>
-    <span class="k">while</span> <span class="n">Q</span> <span class="o">!=</span> <span class="err">∅</span>
+    <span class="k">while</span> <span class="n">Q</span> <span class="o">!=</span> <span class="err">Ø</span>
         <span class="n">u</span> <span class="o">=</span> <span class="n">DEQUEUE</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span>
         <span class="n">output</span> <span class="n">u</span>
         <span class="c1">// for loop executes O(E) times total.</span>
