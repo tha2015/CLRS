@@ -6020,7 +6020,7 @@ $$</p>
 <p>Give an $O(VE)$-time algorithm for computing the transitive closure of a directed
 graph $G = (V, E)$.</p>
 </blockquote>
-<p>Create an $n$ by $n$ matrix $A$ filled with $0$'s. We are done if we can determine the vertices reachable from a particular vertex in $O(E)$ time, since we can just compute this for each $v \in V$. To do this, assign each edge weight $1$. Then we have $\delta(v, u) \le |E|$ for all $u \in V$. By Problem 24-4 (a) we can compute $\delta(v, u)$ in $O(E)$ forall $u \in V$. If $\delta(v, u) &lt; \infty$, set $A_{ij} = 1$. Otherwise, leave it as $0$.</p>
+<p>Create an $n$ by $n$ matrix $A$ filled with $0$'s. We are done if we can determine the vertices reachable from a particular vertex in $O(E)$ time, since we can just compute this for each $v \in V$. To do this, assign each edge weight $1$. Then we have $\delta(v, u) \le |E|$ for all $u \in V$. By Problem 24-4(a) we can compute $\delta(v, u)$ in $O(E)$ forall $u \in V$. If $\delta(v, u) &lt; \infty$, set $A_{ij} = 1$. Otherwise, leave it as $0$.</p>
 <h2 id="252-9">25.2-9</h2>
 <blockquote>
 <p>Suppose that we can compute the transitive closure of a directed acyclic graph in $f(|V|, |E|)$ time, where $f$ is a monotonically increasing function of $|V|$ and $|E|$. Show that the time to compute the transitive closure $G^* = (V, E^*)$ of a general directed graph $G = (V, E)$ is then $f(|V|, |E|) + O(V + E^*)$.</p>
