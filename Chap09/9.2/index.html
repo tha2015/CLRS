@@ -5797,9 +5797,9 @@ However, $i$ is assumed to be a nonnegative number, and to be executing line 8, 
     <span class="k">for</span> <span class="n">k</span> <span class="o">=</span> <span class="n">p</span> <span class="o">-</span> <span class="mi">1</span> <span class="n">to</span> <span class="n">r</span>
        <span class="k">if</span> <span class="n">A</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">x</span>
            <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
-           <span class="n">swap</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+           <span class="n">swap</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="n">with</span> <span class="n">A</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
     <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="n">swap</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">r</span><span class="p">])</span>
+    <span class="n">swap</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="n">with</span> <span class="n">A</span><span class="p">[</span><span class="n">r</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">i</span>
 </pre></div>
 </td></tr></table>
@@ -5808,8 +5808,8 @@ However, $i$ is assumed to be a nonnegative number, and to be executing line 8, 
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">RANDOMIZED</span><span class="o">-</span><span class="n">PARTITION</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">rand</span><span class="p">(</span><span class="n">p</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
-    <span class="n">swap</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="n">r</span><span class="p">])</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">RANDOM</span><span class="p">(</span><span class="n">p</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+    <span class="n">swap</span> <span class="n">A</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="n">with</span> <span class="n">A</span><span class="p">[</span><span class="n">r</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">PARTITION</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
@@ -5827,7 +5827,7 @@ However, $i$ is assumed to be a nonnegative number, and to be executing line 8, 
 11
 12
 13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">RANDOMIZED</span><span class="o">-</span><span class="n">SELECT</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-    <span class="k">while</span> <span class="n">TRUE</span>
+    <span class="k">while</span> <span class="nb">true</span>
         <span class="k">if</span> <span class="n">p</span> <span class="o">==</span> <span class="n">r</span>
             <span class="k">return</span> <span class="n">A</span><span class="p">[</span><span class="n">p</span><span class="p">]</span>
         <span class="n">q</span> <span class="o">=</span> <span class="n">RANDOMIZED</span><span class="o">-</span><span class="n">PARTITION</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>

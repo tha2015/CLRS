@@ -5676,8 +5676,8 @@ P(x) &amp; = \sum_{k = 0}^n a_k x^k \\
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span> <span class="n">down</span> <span class="mi">0</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">ai</span> <span class="o">+</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+<span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span> <span class="n">downto</span> <span class="mi">0</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
 </pre></div>
 </td></tr></table>
 
@@ -5702,7 +5702,7 @@ P(x) &amp; = \sum_{k = 0}^n a_k x^k \\
         <span class="n">temp</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="n">to</span> <span class="n">k</span>
             <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">*</span> <span class="n">x</span>
-            <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">ai</span> <span class="o">*</span> <span class="n">m</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">m</span>
 </pre></div>
 </td></tr></table>
 

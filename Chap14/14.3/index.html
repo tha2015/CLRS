@@ -5814,8 +5814,8 @@
 </blockquote>
 <p>Add 2 lines in $\text{LEFT-ROTATE}$ in 13.2</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="n">max</span><span class="p">[</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
-    <span class="n">max</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">high</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">max</span><span class="p">(</span><span class="n">left</span><span class="p">[</span><span class="n">x</span><span class="p">]),</span> <span class="n">max</span><span class="p">(</span><span class="n">right</span><span class="p">[</span><span class="n">x</span><span class="p">]))</span>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    <span class="n">y</span><span class="p">.</span><span class="n">max</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="n">max</span>
+    <span class="n">x</span><span class="p">.</span><span class="n">max</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">high</span><span class="p">,</span> <span class="n">x</span><span class="p">.</span><span class="n">left</span><span class="p">.</span><span class="n">max</span><span class="p">,</span> <span class="n">x</span><span class="p">.</span><span class="n">right</span><span class="p">.</span><span class="n">max</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
 
@@ -5889,13 +5889,13 @@
 7
 8
 9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">INTERVALS</span><span class="o">-</span><span class="n">SEARCH</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-    <span class="n">list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">let</span> <span class="n">list</span> <span class="n">be</span> <span class="n">an</span> <span class="n">empty</span> <span class="n">array</span>
     <span class="k">if</span> <span class="n">i</span> <span class="n">overlaps</span> <span class="n">x</span><span class="p">.</span><span class="kt">int</span>
-        <span class="n">list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">list</span><span class="p">.</span><span class="n">APPEND</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">x</span><span class="p">.</span><span class="n">left</span> <span class="o">!=</span> <span class="n">T</span><span class="p">.</span><span class="n">nil</span> <span class="n">and</span> <span class="n">x</span><span class="p">.</span><span class="n">left</span><span class="p">.</span><span class="n">max</span> <span class="o">&gt;</span> <span class="n">i</span><span class="p">.</span><span class="n">low</span>
-        <span class="n">list</span> <span class="o">=</span> <span class="n">list</span> <span class="o">+</span> <span class="n">INTERVALS</span><span class="o">-</span><span class="n">SEARCH</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">x</span><span class="p">.</span><span class="n">left</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+        <span class="n">list</span> <span class="o">=</span> <span class="n">list</span><span class="p">.</span><span class="n">APPEND</span><span class="p">(</span><span class="n">INTERVALS</span><span class="o">-</span><span class="n">SEARCH</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">x</span><span class="p">.</span><span class="n">left</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
     <span class="k">if</span> <span class="n">x</span><span class="p">.</span><span class="n">right</span> <span class="o">!=</span> <span class="n">T</span><span class="p">.</span><span class="n">nil</span> <span class="n">and</span> <span class="n">x</span><span class="p">.</span><span class="kt">int</span><span class="p">.</span><span class="n">low</span> <span class="err">≤</span> <span class="n">i</span><span class="p">.</span><span class="n">high</span> <span class="n">and</span> <span class="n">x</span><span class="p">.</span><span class="n">right</span><span class="p">.</span><span class="n">max</span> <span class="err">≥</span> <span class="n">i</span><span class="p">.</span><span class="n">low</span>
-        <span class="n">list</span> <span class="o">=</span> <span class="n">list</span> <span class="o">+</span> <span class="n">INTERVALS</span><span class="o">-</span><span class="n">SEARCH</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">x</span><span class="p">.</span><span class="n">right</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+        <span class="n">list</span> <span class="o">=</span> <span class="n">list</span><span class="p">.</span><span class="n">APPEND</span><span class="p">(</span><span class="n">INTERVALS</span><span class="o">-</span><span class="n">SEARCH</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">x</span><span class="p">.</span><span class="n">right</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">list</span>
 </pre></div>
 </td></tr></table>
@@ -5916,15 +5916,15 @@
  9
 10
 11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">INTERVAL</span><span class="o">-</span><span class="n">SEARCH</span><span class="o">-</span><span class="n">EXACTLY</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">root</span><span class="p">[</span><span class="n">T</span><span class="p">]</span>
-    <span class="k">while</span> <span class="n">x</span> <span class="o">!=</span> <span class="n">nil</span><span class="p">[</span><span class="n">T</span><span class="p">]</span> <span class="n">and</span> <span class="n">i</span> <span class="n">not</span> <span class="n">exactly</span> <span class="n">overlap</span> <span class="n">x</span>
-        <span class="k">if</span> <span class="n">high</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">max</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
-            <span class="n">x</span> <span class="o">=</span> <span class="n">nil</span><span class="p">[</span><span class="n">T</span><span class="p">]</span>
-        <span class="k">else</span> <span class="k">if</span> <span class="n">low</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">low</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
-            <span class="n">x</span> <span class="o">=</span> <span class="n">left</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
-        <span class="k">else</span> <span class="k">if</span> <span class="n">low</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">low</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
-            <span class="n">x</span> <span class="o">=</span> <span class="n">right</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
-        <span class="k">else</span> <span class="n">x</span> <span class="o">=</span> <span class="n">nil</span><span class="p">[</span><span class="n">T</span><span class="p">]</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">T</span><span class="p">.</span><span class="n">root</span>
+    <span class="k">while</span> <span class="n">x</span> <span class="o">!=</span> <span class="n">T</span><span class="p">.</span><span class="n">nil</span> <span class="n">and</span> <span class="n">i</span> <span class="n">not</span> <span class="n">exactly</span> <span class="n">overlap</span> <span class="n">x</span>
+        <span class="k">if</span> <span class="n">i</span><span class="p">.</span><span class="n">high</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">max</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">T</span><span class="p">.</span><span class="n">nil</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="n">i</span><span class="p">.</span><span class="n">low</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">.</span><span class="n">low</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="n">left</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="n">i</span><span class="p">.</span><span class="n">low</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">low</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="n">right</span>
+        <span class="k">else</span> <span class="n">x</span> <span class="o">=</span> <span class="n">T</span><span class="p">.</span><span class="n">nil</span>
     <span class="k">return</span> <span class="n">x</span>
 </pre></div>
 </td></tr></table>

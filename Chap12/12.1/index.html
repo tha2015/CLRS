@@ -5831,18 +5831,18 @@
 12
 13
 14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">INORDER</span><span class="o">-</span><span class="n">TREE</span><span class="o">-</span><span class="n">WALK</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
-    <span class="n">create</span> <span class="n">an</span> <span class="n">empty</span> <span class="n">stack</span> <span class="n">S</span> <span class="o">=</span> <span class="n">NIL</span>
+    <span class="n">let</span> <span class="n">S</span> <span class="n">be</span> <span class="n">an</span> <span class="n">empty</span> <span class="n">stack</span>
     <span class="n">current</span> <span class="o">=</span> <span class="n">T</span><span class="p">.</span><span class="n">root</span>
     <span class="n">done</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">while</span> <span class="o">!</span><span class="n">done</span>
         <span class="k">if</span> <span class="n">current</span> <span class="o">!=</span> <span class="n">NIL</span>
-            <span class="n">S</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
-            <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">-&gt;</span><span class="n">left</span>
+            <span class="n">PUSH</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">current</span><span class="p">)</span>
+            <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="p">.</span><span class="n">left</span>
         <span class="k">else</span>
-            <span class="k">if</span> <span class="o">!</span><span class="n">S</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span>
-                <span class="n">current</span> <span class="o">=</span> <span class="n">S</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+            <span class="k">if</span> <span class="o">!</span><span class="n">S</span><span class="p">.</span><span class="n">EMPTY</span><span class="p">()</span>
+                <span class="n">current</span> <span class="o">=</span> <span class="n">POP</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
                 <span class="n">print</span> <span class="n">current</span>
-                <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">-&gt;</span><span class="n">right</span>
+                <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="p">.</span><span class="n">right</span>
             <span class="k">else</span> <span class="n">done</span> <span class="o">=</span> <span class="mi">1</span>
 </pre></div>
 </td></tr></table>
@@ -5858,8 +5858,8 @@
 5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">PREORDER</span><span class="o">-</span><span class="n">TREE</span><span class="o">-</span><span class="n">WALK</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="n">NIL</span>
         <span class="n">print</span> <span class="n">x</span><span class="p">.</span><span class="n">key</span>
-        <span class="n">PREORDER</span><span class="o">-</span><span class="n">TREE</span><span class="o">-</span><span class="n">WALK</span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">)</span>
-        <span class="n">PREORDER</span><span class="o">-</span><span class="n">TREE</span><span class="o">-</span><span class="n">WALK</span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">)</span>
+        <span class="n">PREORDER</span><span class="o">-</span><span class="n">TREE</span><span class="o">-</span><span class="n">WALK</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">left</span><span class="p">)</span>
+        <span class="n">PREORDER</span><span class="o">-</span><span class="n">TREE</span><span class="o">-</span><span class="n">WALK</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">right</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
 
@@ -5869,8 +5869,8 @@
 4
 5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">POSTORDER</span><span class="o">-</span><span class="n">TREE</span><span class="o">-</span><span class="n">WALK</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="n">NIL</span>
-        <span class="n">POSTORDER</span><span class="o">-</span><span class="n">TREE</span><span class="o">-</span><span class="n">WALK</span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">)</span>
-        <span class="n">POSTORDER</span><span class="o">-</span><span class="n">TREE</span><span class="o">-</span><span class="n">WALK</span><span class="p">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">)</span>
+        <span class="n">POSTORDER</span><span class="o">-</span><span class="n">TREE</span><span class="o">-</span><span class="n">WALK</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">left</span><span class="p">)</span>
+        <span class="n">POSTORDER</span><span class="o">-</span><span class="n">TREE</span><span class="o">-</span><span class="n">WALK</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">right</span><span class="p">)</span>
         <span class="n">print</span> <span class="n">x</span><span class="p">.</span><span class="n">key</span>
 </pre></div>
 </td></tr></table>
