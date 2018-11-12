@@ -115,6 +115,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#334-1" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -5198,9 +5202,71 @@
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        33.4 Finding the closest pair of points
+      </label>
+    
     <a href="./" title="33.4 Finding the closest pair of points" class="md-nav__link md-nav__link--active">
       33.4 Finding the closest pair of points
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#334-1" title="33.4-1" class="md-nav__link">
+    33.4-1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#334-2" title="33.4-2" class="md-nav__link">
+    33.4-2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#334-3" title="33.4-3" class="md-nav__link">
+    33.4-3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#334-4" title="33.4-4" class="md-nav__link">
+    33.4-4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#334-5" title="33.4-5" class="md-nav__link">
+    33.4-5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#334-6" title="33.4-6" class="md-nav__link">
+    33.4-6
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -5654,6 +5720,70 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#334-1" title="33.4-1" class="md-nav__link">
+    33.4-1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#334-2" title="33.4-2" class="md-nav__link">
+    33.4-2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#334-3" title="33.4-3" class="md-nav__link">
+    33.4-3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#334-4" title="33.4-4" class="md-nav__link">
+    33.4-4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#334-5" title="33.4-5" class="md-nav__link">
+    33.4-5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#334-6" title="33.4-6" class="md-nav__link">
+    33.4-6
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -5664,7 +5794,36 @@
                 
                   <h1>33.4 Finding the closest pair of points</h1>
                 
-                <p>(Omit!)</p>
+                <h2 id="334-1">33.4-1</h2>
+<blockquote>
+<p>Professor Williams comes up with a scheme that allows the closest-pair algorithm to check only $5$ points following each point in array $Y'$. The idea is always to place points on line $l$ into set $P_L$. Then, there cannot be pairs of coincident points on line $l$ with one point in $P_L$ and one in $P_R$. Thus, at most $6$ points can reside in the $\delta \times 2\delta$ rectangle. What is the flaw in the professor's scheme?</p>
+</blockquote>
+<p>(Omit!)</p>
+<h2 id="334-2">33.4-2</h2>
+<blockquote>
+<p>Show that it actually sufﬁces to check only the points in the $5$ array positions following each point in the array $Y'$.</p>
+</blockquote>
+<p>(Omit!)</p>
+<h2 id="334-3">33.4-3</h2>
+<blockquote>
+<p>We can deﬁne the distance between two points in ways other than euclidean. In the plane, the <strong><em>$L_m$-distance</em></strong> between points $p_1$ and $p_2$ is given by the expression $(|x_1 - x_2|^m + |y_1 - y_2|^m)^{1 / m}$. Euclidean distance, therefore, is $L_2$-distance. Modify the closest-pair algorithm to use the $L_1$-distance, which is also known as the <strong><em>Manhattan distance</em></strong>.</p>
+</blockquote>
+<p>(Omit!)</p>
+<h2 id="334-4">33.4-4</h2>
+<blockquote>
+<p>Given two points $p_1$ and $p_2$ in the plane, the $L_\infty$-distance between them is given by $\max(|x_1 - x_2|, |y_1 - y_2|)$. Modify the closest-pair algorithm to use the $L_\infty$-distance.</p>
+</blockquote>
+<p>(Omit!)</p>
+<h2 id="334-5">33.4-5</h2>
+<blockquote>
+<p>Suppose that $\Omega(n)$ of the points given to the closest-pair algorithm are covertical. Show how to determine the sets $P_L$ and $P_R$ and how to determine whether each point of $Y$ is in $P_L$ or $P_R$ so that the running time for the closest-pair algorithm remains $O(n\lg n)$.</p>
+</blockquote>
+<p>(Omit!)</p>
+<h2 id="334-6">33.4-6</h2>
+<blockquote>
+<p>Suggest a change to the closest-pair algorithm that avoids presorting the $Y$ array but leaves the running time as $O(n\lg n)$. ($\textit{Hint:}$ Merge sorted arrays $Y_L$ and $Y_R$ to form the sorted array $Y$.)</p>
+</blockquote>
+<p>(Omit!)</p>
                 
                   
                 

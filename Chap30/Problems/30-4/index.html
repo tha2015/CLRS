@@ -5666,7 +5666,34 @@
                 
                   <h1>30-4 Evaluating all derivatives of a polynomial at a point</h1>
                 
-                <p>(Omit!)</p>
+                <blockquote>
+<p>Given a polynomial $A(x)$ of degree-bound $n$, we define its $t$th derivative by</p>
+<p>$$
+A^{(t)}(x) =
+\begin{cases}
+A(x)                        &amp; \text{ if } t = 0, \\
+\frac{d}{dx} A^{(t - 1)}(x) &amp; \text{ if } 1 \le t \le n - 1, \\
+0                           &amp; \text{ if } t \ge n.
+\end{cases}
+$$</p>
+<p>From the coefficient representation $(a_0, a_1, \dots, a_{n - 1})$ of $A(x)$ and a given point $x_0$, we wish to determine $A^{(t)}(x_0)$ for $t = 0, 1, \dots, n- 1$.</p>
+<p><strong>a.</strong> Given coefficients $b_0, b_1, \dots, b_{n - 1}$ such that</p>
+<p>$$A(x) = \sum_{j = 0}^{n - 1} b_j(x - x_0)^j,$$</p>
+<p>show how to compute $A^{(t)}(x_0)$ for $t = 0, 1, \dots, n - 1$, in $O(n)$ time.</p>
+<p><strong>b.</strong> Explain how to find $b_0, b_1, \dots, b_{n - 1}$ in $O(n\lg n)$ time, given $A(x_0 + \omega_n^k)$ for $k = 0, 1, \dots, n - 1$.</p>
+<p><strong>c.</strong> Prove that</p>
+<p>$$A(x_0 + \omega_n^k) = \sum_{r = 0}^{n - 1} \Bigg(\frac{\omega_n^{kr}}{r!} \sum_{j = 0}^{n - 1} f(j)g(r - j)\Bigg),$$</p>
+<p>where $f(j) = a_j \cdot j!$ and</p>
+<p>$$
+g(l) =
+\begin{cases}
+x_0^{-l} / (-l)! &amp; \text{ if } -(n - 1) \le l \le 0, \\
+0                &amp; \text{ if } 1 \le l \le n - 1.
+\end{cases}
+$$</p>
+<p><strong>d.</strong> Explain how to evaluate $A(x_0 + \omega_n^k)$ for $k = 0, 1, \dots, n - 1$ in $O(n\lg n)$ time. Conclude that we can evaluate all nontrivial derivatives of $A(x)$ at $x_0$ in $O(n\lg n)$ time.</p>
+</blockquote>
+<p>(Omit!)</p>
                 
                   
                 

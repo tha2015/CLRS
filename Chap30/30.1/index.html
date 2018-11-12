@@ -115,6 +115,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#301-1" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -4694,9 +4698,78 @@
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        30.1 Representing polynomials
+      </label>
+    
     <a href="./" title="30.1 Representing polynomials" class="md-nav__link md-nav__link--active">
       30.1 Representing polynomials
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#301-1" title="30.1-1" class="md-nav__link">
+    30.1-1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#301-2" title="30.1-2" class="md-nav__link">
+    30.1-2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#301-3" title="30.1-3" class="md-nav__link">
+    30.1-3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#301-4" title="30.1-4" class="md-nav__link">
+    30.1-4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#301-5" title="30.1-5" class="md-nav__link">
+    30.1-5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#301-6" title="30.1-6" class="md-nav__link">
+    30.1-6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#301-7" title="30.1-7" class="md-nav__link">
+    30.1-7
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -5654,6 +5727,77 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#301-1" title="30.1-1" class="md-nav__link">
+    30.1-1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#301-2" title="30.1-2" class="md-nav__link">
+    30.1-2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#301-3" title="30.1-3" class="md-nav__link">
+    30.1-3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#301-4" title="30.1-4" class="md-nav__link">
+    30.1-4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#301-5" title="30.1-5" class="md-nav__link">
+    30.1-5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#301-6" title="30.1-6" class="md-nav__link">
+    30.1-6
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#301-7" title="30.1-7" class="md-nav__link">
+    30.1-7
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -5664,7 +5808,45 @@
                 
                   <h1>30.1 Representing polynomials</h1>
                 
-                <p>(Omit!)</p>
+                <h2 id="301-1">30.1-1</h2>
+<blockquote>
+<p>Multiply the polynomials $A(x) = 7x^3 - x^2 + x - 10$ and $B(x) = 8x^3 - 6x + 3$ using equations $\text{(30.1)}$ and $\text{(30.2)}$.</p>
+</blockquote>
+<p>(Omit!)</p>
+<h2 id="301-2">30.1-2</h2>
+<blockquote>
+<p>Another way to evaluate a polynomial $A(x)$ of degree-bound $n$ at a given point $x_0$ is to divide $A(x)$ by the polynomial $(x - x_0)$, obtaining a quotient polynomial $q(x)$ of degree-bound $n - 1$ and a remainder $r$, such that</p>
+<p>$$A(x) = q(x)(x - x_0) + r.$$</p>
+<p>Clearly, $A(x_0) = r$. Show how to compute the remainder $r$ and the coefficients of $q(x)$ in time $\Theta(n)$ from $x_0$ and the coefficients of $A$.</p>
+</blockquote>
+<p>(Omit!)</p>
+<h2 id="301-3">30.1-3</h2>
+<blockquote>
+<p>Derive a point-value representation for $A^\text{rev}(x) = \sum_{j = 0}^{n - 1} a_{n - 1 - j}x^j$ from a point-value representation for $A(x) = \sum_{j = 0}^{n - 1} a_jx^j$, assuming that none of the points is $0$.</p>
+</blockquote>
+<p>(Omit!)</p>
+<h2 id="301-4">30.1-4</h2>
+<blockquote>
+<p>Prove that $n$ distinct point-value pairs are necessary to uniquely specify a polynomial of degree-bound $n$, that is, if fewer than $n$ distinct point-value pairs are given, they fail to specify a unique polynomial of degree-bound $n$. ($\textit{Hint:}$ Using Theorem 30.1, what can you say about a set of $n - 1$ point-value pairs to which you add one more arbitrarily chosen point-value pair?)</p>
+</blockquote>
+<p>(Omit!)</p>
+<h2 id="301-5">30.1-5</h2>
+<blockquote>
+<p>Show how to use equation $\text{(30.5)}$ to interpolate in time $\Theta(n^2)$. ($\textit{Hint:}$ First compute the coefficient representation of the polynomial $\prod_j (x - x_j)$ and then divide by $(x - x_k)$ as necessary for the numerator of each term; see Exercise 30.1-2. You can compute each of the $n$ denominators in time $O(n)$.)</p>
+</blockquote>
+<p>(Omit!)</p>
+<h2 id="301-6">30.1-6</h2>
+<blockquote>
+<p>Explain what is wrong with the "obvious" approach to polynomial division using a point-value representation, i.e., dividing the corresponding $y$ values. Discuss separately the case in which the division comes out exactly and the case in which it doesn't.</p>
+</blockquote>
+<p>(Omit!)</p>
+<h2 id="301-7">30.1-7</h2>
+<blockquote>
+<p>Consider two sets $A$ and $B$, each having $n$ integers in the range from $0$ to $10n$. We wish to compute the <strong><em>Cartesian sum</em></strong> of $A$ and $B$, defined by</p>
+<p>$$C = \{x + y: x \in A \text{ and } y \in B\}.$$</p>
+<p>Note that the integers in $C$ are in the range from $0$ to $20n$. We want to find the elements of $C$ and the number of times each element of $C$ is realized as a sum of elements in $A$ and $B$. Show how to solve the problem in $O(n\lg n)$ time. ($\textit{Hint:}$ Represent $A$ and $B$ as polynomials of degree at most $10n$.)</p>
+</blockquote>
+<p>(Omit!)</p>
                 
                   
                 
