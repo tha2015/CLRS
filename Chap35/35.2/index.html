@@ -115,6 +115,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#352-1" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -5486,9 +5490,64 @@
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        35.2 The traveling-salesman problem
+      </label>
+    
     <a href="./" title="35.2 The traveling-salesman problem" class="md-nav__link md-nav__link--active">
       35.2 The traveling-salesman problem
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#352-1" title="35.2-1" class="md-nav__link">
+    35.2-1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#352-2" title="35.2-2" class="md-nav__link">
+    35.2-2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#352-3" title="35.2-3" class="md-nav__link">
+    35.2-3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#352-4" title="35.2-4" class="md-nav__link">
+    35.2-4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#352-5" title="35.2-5" class="md-nav__link">
+    35.2-5
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -5654,6 +5713,63 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#352-1" title="35.2-1" class="md-nav__link">
+    35.2-1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#352-2" title="35.2-2" class="md-nav__link">
+    35.2-2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#352-3" title="35.2-3" class="md-nav__link">
+    35.2-3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#352-4" title="35.2-4" class="md-nav__link">
+    35.2-4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#352-5" title="35.2-5" class="md-nav__link">
+    35.2-5
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -5664,7 +5780,31 @@
                 
                   <h1>35.2 The traveling-salesman problem</h1>
                 
-                <p>(Omit!)</p>
+                <h2 id="352-1">35.2-1</h2>
+<blockquote>
+<p>Suppose that a complete undirected graph $G = (V, E)$ with at least $3$ vertices has a cost function $c$ that satisfies the triangle inequality. Prove that $c(u, v) \ge 0$ for all $u, v \in V$.</p>
+</blockquote>
+<p>(Omit!)</p>
+<h2 id="352-2">35.2-2</h2>
+<blockquote>
+<p>Show how in polynomial time we can transform one instance of the traveling-salesman problem into another instance whose cost function satisfies the triangle inequality. The two instances must have the same set of optimal tours. Explain why such a polynomial-time transformation does not contradict Theorem 35.3, assuming that $\text P \ne \text{NP}$.</p>
+</blockquote>
+<p>(Omit!)</p>
+<h2 id="352-3">35.2-3</h2>
+<blockquote>
+<p>Consider the following <strong><em>closest-point heuristic</em></strong> for building an approximate traveling-salesman tour whose cost function satisfies the triangle inequality. Begin with a trivial cycle consisting of a single arbitrarily chosen vertex. At each step, identify the vertex $u$ that is not on the cycle but whose distance to any vertex on the cycle is minimum. Suppose that the vertex on the cycle that is nearest $u$ is vertex $v$. Extend the cycle to include $u$ by inserting $u$ just after $v$. Repeat until all vertices are on the cycle. Prove that this heuristic returns a tour whose total cost is not more than twice the cost of an optimal tour.</p>
+</blockquote>
+<p>(Omit!)</p>
+<h2 id="352-4">35.2-4</h2>
+<blockquote>
+<p>In the <strong><em>bottleneck traveling-salesman problem</em></strong>, we wish to find the hamiltonian cycle that minimizes the cost of the most costly edge in the cycle. Assuming that the cost function satisfies the triangle inequality, show that there exists a polynomial-time approximation algorithm with approximation ratio $3$ for this problem. ($\textit{Hint:}$ Show recursively that we can visit all the nodes in a bottleneck spanning tree, as discussed in Problem 23-3, exactly once by taking a full walk of the tree and skipping nodes, but without skipping more than two consecutive intermediate nodes. Show that the costliest edge in a bottleneck spanning tree has a cost that is at most the cost of the costliest edge in a bottleneck hamiltonian cycle.)</p>
+</blockquote>
+<p>(Omit!)</p>
+<h2 id="352-5">35.2-5</h2>
+<blockquote>
+<p>Suppose that the vertices for an instance of the traveling-salesman problem are points in the plane and that the cost $c(u, v)$ is the euclidean distance between points $u$ and $v$. Show that an optimal tour never crosses itself.</p>
+</blockquote>
+<p>(Omit!)</p>
                 
                   
                 

@@ -5666,7 +5666,17 @@
                 
                   <h1>35-1 Bin packing</h1>
                 
-                <p>(Omit!)</p>
+                <blockquote>
+<p>Suppose that we are given a set of $n$ objects, where the size $s_i$ of the $i$th object satisfies $0 &lt; s_i &lt; 1$. We wish to pack all the objects into the minimum number of unit-size bins. Each bin can hold any subset of the objects whose total size does not exceed $1$.</p>
+<p><strong>a.</strong> Prove that the problem of determining the minimum number of bins required is $\text{NP-hard}$. ($\textit{Hint:}$ Reduce from the subset-sum problem.)</p>
+<p>The <strong><em>first-fit</em></strong> heuristic takes each object in turn and places it into the first bin that can accommodate it. Let $S = \sum_{i = 1}^n s_i$.</p>
+<p><strong>b.</strong> Argue that the optimal number of bins required is at least $\lceil S \rceil$.</p>
+<p><strong>c.</strong> Argue that the first-fit heuristic leaves at most one bin less than half full.</p>
+<p><strong>d.</strong> Prove that the number of bins used by the first-fit heuristic is never more than $\lceil 2S \rceil$.</p>
+<p><strong>e.</strong> Prove an approximation ratio of $2$ for the first-fit heuristic.</p>
+<p><strong>f.</strong> Give an efficient implementation of the first-fit heuristic, and analyze its running time.</p>
+</blockquote>
+<p>(Omit!)</p>
                 
                   
                 
