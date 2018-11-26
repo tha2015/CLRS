@@ -5843,7 +5843,7 @@
 <ul>
 <li>
 <p>The subproblem size for a node at depth $i$ is $n / 2^i$, thus the tree has $\lg n + 1$ levels and $3^{\lg n} = n^{\lg 3}$ leaves.<br />
-The total cost over all nodes at depth $i$, for $i = 0, 1, 2, \ldots, \lg n - 1$, is $3^i(n / 2^i) = (3 / 2)^i$.</p>
+The total cost over all nodes at depth $i$, for $i = 0, 1, 2, \ldots, \lg n - 1$, is $3^i(n / 2^i) = (3 / 2)^i{n}$.</p>
 <p>\begin{align}
 T(n) &amp; = n + \frac{3}{2}n +(\frac{3}{2})^2 + \cdots + (\frac{3}{2})^{\lg n - 1}  + \Theta(n^{\lg 3}) \\
      &amp; = \sum_{i = 0}^{\lg n - 1}(\frac{3}{2})^i n + \Theta(n^{\lg 3}) \\
@@ -5919,7 +5919,7 @@ T(n) &amp; =   4T(n / 2 + 2) + n \\
 <ul>
 <li>
 <p>The subproblem size for a node at depth $i$ is $n - i$, thus the tree has $n + 1$ levels and $2^n$ leaves.<br />
-The total cost over all nodes at depth $i$, for $i = 0, 1, 2, \ldots, n - 1$, is $2^i(n - i)$.</p>
+The total cost over all nodes at depth $i$, for $i = 0, 1, 2, \ldots, n - 1$, is $2^i$.</p>
 <p>\begin{align}
 T(n) &amp; = \sum_{i = 0}^{n - 1}2^i + \Theta(2^n) \\
      &amp; = \frac{2^n - 1}{2 - 1} + \Theta(2^n) \\
